@@ -1,0 +1,27 @@
+Java List Methodları
+Method	Tanımı
+void add(int index, E element)	                        Belirtilen öğeyi listede belirtilen konuma eklemek için kullanılır.
+boolean add(E e)	                                    Belirtilen öğeyi listenin sonuna eklemek için kullanılır.
+boolean addAll(Collection<? extends E> c)	            Belirtilen öğeleri listenin sonuna eklemek için kullanılır.
+boolean addAll(int index, Collection<? extends E> c)	Belirtilen öğeleri listenin belirtilen konumuna eklemek için kullanılır.
+void clear()	                                        Listedeki tüm elemanları silmek için kullanılır.
+boolean equals(Object o)	                            Belirtilen nesneyi bir listenin öğeleriyle karşılaştırmak için kullanılır.
+int hashcode()	                                        listenin hash kodunu döndürür.
+E get(int index)	                                    Belirtilen konumdaki eşleşen öğeyi getirir.
+boolean isEmpty()	                                    Liste boşsa true, diğer durumda false döndürür.
+int lastIndexOf(Object o)	                            Belirtilen öğenin son tekrarlandığı durumun bu listesindeki dizini veya liste bu öğeyi içermiyorsa -1’i döndürmek için kullanılır.
+Object[] toArray()	                                    Bu listedeki tüm öğeleri içeren bir diziyi doğru sırayla döndürmek için kullanılır.
+<T> T[] toArray(T[] a)	                                Bu listedeki tüm öğeleri içeren bir diziyi doğru sırayla döndürmek için kullanılır.
+boolean contains(Object o)	                            Liste belirtilen öğeyi içeriyorsa true değerini döndürür
+boolean containsAll(Collection<?> c)	                Liste belirtilen tüm öğeleri içeriyorsa true değerini döndürür
+int indexOf(Object o)	                                Belirtilen öğenin ilk oluşumunun bu listesindeki dizini veya Liste bu öğeyi içermiyorsa -1’i döndürmek için kullanılır.
+E remove(int index)	                                    Listede belirtilen konumda bulunan elemanı çıkarmak için kullanılır.
+boolean remove(Object o)	                            Belirtilen öğe ile eşleşen ilk elemanı kaldırmak için kullanılr.
+boolean removeAll(Collection<?> c)	                    Listedeki tüm elemanları kaldırmak için kullanılır.
+void replaceAll(UnaryOperator<E> operator)	            Listedeki tüm öğeleri belirtilen öğeyle değiştirmek için kullanılır.
+void retainAll(Collection<?> c)	                        Listedeki belirtilen koleksiyonda bulunan tüm öğeleri tutmak için kullanılır.
+E set(int index, E element)	                            Listede, belirtilen konumda bulunan belirtilen öğeyi değiştirmek için kullanılır.
+void sort(Comparator<? super E> c)	                    Listedeki öğeleri belirtilen karşılaştırıcıya göre sıralamak için kullanılır.
+Spliterator<E> spliterator()	                        Listedeki öğeler üzerinde ayırıcı oluşturmak için kullanılır.
+List<E> subList(int fromIndex, int toIndex)	            Verilen aralıktaki tüm unsurları getirmek için kullanılır.
+int size()	                                            Verilen aralıktaki tüm unsurları getirmek için kullanılır….
