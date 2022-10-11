@@ -5,14 +5,17 @@ public class CarInsurance {
         System.out.println("Welcome to the Cydeo car insurance!");
         Scanner scan=new Scanner(System.in);
         double prim=0;
-        System.out.println("Enter your full Name");
+
+        System.out.println("Enter your full name");//2
         String fullName=scan.nextLine();
-        System.out.println("Do you have a US diriver Licence?");
-        if(scan.nextLine()=="no") {
+
+        System.out.println("Do you have a US driver license?");//3
+        if(scan.nextLine().equals("no")) {
             System.out.println("You must have a license to get insurance!");
             System.exit(0);
         }
-        System.out.println("Enter your zip code");
+
+        System.out.println("Enter your zip code");//4
         long zipCode=scan.nextLong();
         if (zipCode==20910 || zipCode==20740){
             prim+=60;
@@ -21,36 +24,34 @@ public class CarInsurance {
         }else {
             prim+=50;
         }
+        scan.nextLine();
+
         System.out.println("Is this vehicle owned, financed, or leased?");
-        String have=scan.nextLine();
-        switch (have){
-            case "owned":{
-                prim+=10;
-                break;
-            }
-            case "financed":{
-                prim+=15;
-                break;
-            }
-            case "leased":{
-                prim+=20;
-                break;
-            }
+        String have=scan.nextLine();//5
+        if (have.equals("owned")) {
+            prim+=10;
+        }else if(have.equals("financed")){
+            prim+=15;
+        } else if(have.equals("leased")){
+            prim+=20;
         }
 
-        System.out.println("How is this vehicle primarily used?");
+
+        System.out.println("How is this vehicle primarily used?");//6
         String have1=scan.nextLine();
-        if (have1 == "busines") {
+        if (have1.equals("busines")) {
             prim+=50;
-        } else if (have1=="pleasure") {
+        } else if (have1.equals("pleasure")) {
             prim+=10;
-        } else if (have1=="commuting") {
+        } else if (have1.equals("commuting")) {
             prim+=20;
-            System.out.println("`How many days do you commute?");
+            System.out.println("`How many days do you commute?");//6,5
             int dayCommute=scan.nextInt();
             prim+=dayCommute*5;
         }
-        System.out.println("How old are you?");
+
+
+        System.out.println("How old are you?");//7
         int old=scan.nextInt();
         if (old<16){
             System.out.println("You can't be driving");
@@ -62,20 +63,23 @@ public class CarInsurance {
         } else if (old>=25) {
             prim=prim*2;
         }
-        System.out.println("Have you had any accidents in the last 5 years?");
+        scan.nextLine();
+
+        System.out.println("Have you had any accidents in the last 5 years?");//8
         String accident=scan.nextLine();
-        if (accident == "yes" || accident=="YES") {
+        if (accident.equals("Yes") || accident.equals("YES")) {
             System.out.println("How many?");
             int acci=scan.nextInt();
             prim=prim+acci*10;
         }
+
         System.out.println("What is the highest level of education you have completed?");
         String edu=scan.nextLine();
-        if (edu=="Bachelors" || edu=="Masters"){
+        if (edu.equals("Bachelors") || edu.equals("Masters")){
             prim=prim-(prim*0.05);
-        } else if (edu=="PHD") {
+        } else if (edu.equals("PHD")) {
             prim=prim-(prim*0.1);
-        }else if (edu == "High School") {
+        }else if (edu.equals("High School")) {
             prim=prim+(prim*0.05);
         }
 
@@ -90,7 +94,9 @@ public class CarInsurance {
         lastName=a+lastName.substring(1);
         System.out.println(firsName+" "+lastName+" here's your quote!");
         System.out.println("This is your start premium cost: $"+ prim);
-        String refNo=firsName.substring(0,2)+lastName.substring(lastName.length()-3)+zipCode+edu;
+
+        String refNo=firsName.substring(0,2)+old+lastName.substring(lastName.length()-3)+zipCode+edu;
         System.out.println("This is your reference number: "+refNo);
+
     }
 }
