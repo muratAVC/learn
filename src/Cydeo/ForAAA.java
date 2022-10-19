@@ -1,3 +1,5 @@
+package Cydeo;
+
 public class ForAAA {
     public static void main(String[] args) {
 
@@ -29,10 +31,5 @@ public class ForAAA {
         }
         }
         System.out.println(b);
-
-
-
-
-
     }
 }
